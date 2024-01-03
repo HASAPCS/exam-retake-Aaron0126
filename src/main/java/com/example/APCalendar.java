@@ -8,6 +8,13 @@ public class APCalendar {
 
     // Method to implement (a)
     public static int numberOfLeapYears(int year1, int year2) {
+        int counter=0;
+        for (int i=year1; i<=year2; i++){
+            if (isLeapYear(i)){
+                counter++;
+            }
+        }
+        return counter;
         // Your implementation here
     }
 
@@ -43,6 +50,9 @@ public class APCalendar {
 
     // Method to implement (b)
     public static int dayOfWeek(int month, int day, int year) {
+        int firstday=firstDayOfYear(year);
+        int howManyDaysTillNow=dayOfYear(month, day, year);
+        return (firstday+howManyDaysTillNow-1)%7;
         // Your implementation here
     }
 
